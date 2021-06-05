@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Pertemuan3Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [Pertemuan3Controller::class,'index']);
+Route::get('/tambah', [Pertemuan3Controller::class,'create']);
+Route::get('/edit', [Pertemuan3Controller::class,'edit']);
