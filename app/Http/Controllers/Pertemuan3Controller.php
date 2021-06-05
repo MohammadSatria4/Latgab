@@ -37,7 +37,12 @@ class Pertemuan3Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::table('siswa')->insert([
+            'nama' => $request->nama,
+            'alamat' => $request->alamat
+        ]);
+
+        return redirect('/');
     }
 
     /**
@@ -59,7 +64,8 @@ class Pertemuan3Controller extends Controller
      */
     public function edit($id)
     {
-        return view('edit0009');
+        $siswa = DB::table('siswa')->find($id);
+        return view('edit0009',['siswa' => $siswa]);
     }
 
     /**
@@ -71,7 +77,13 @@ class Pertemuan3Controller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        DB::table('siswa')
+            ->where('id', $id)
+            ->update([
+                'nama' => $request->nama,
+                'alamat' => $request->alamat
+            ]);
+        return redirect('/');
     }
 
     /**
@@ -82,6 +94,7 @@ class Pertemuan3Controller extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('siswa')->where('id', '=', $id)->delete();
+        return back();
     }
 }

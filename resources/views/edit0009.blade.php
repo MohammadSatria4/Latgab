@@ -25,18 +25,15 @@
     </div>
   </div>
 </nav>
-<form>
+<form method="post" action="{{url('edit',$siswa->id)}}">
+  @csrf
   <div class="mb-3">
     <label for="nama" class="form-label">Nama</label>
-    <input type="text" class="form-control" id="nama">
+    <input type="text" class="form-control" id="nama" name="nama" value="{{$siswa->nama}}">
   </div>
   <div class="mb-3">
     <label for="alamat" class="form-label">alamat</label>
-    <input type="text" class="form-control" id="alamat">
-  </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    <input type="text" class="form-control" id="alamat" name="alamat" value="{{$siswa->alamat}}">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

@@ -41,8 +41,8 @@
         <td>{{ $loop->iteration}}</td>
             <td>{{$siswa->nama}}</td>
             <td>{{$siswa->alamat}}</td>
-            <td><a href="{{url('edit')}}"class="btn btn-warning">Edit</a>
-            <a href="{{url('edit')}}"class="btn btn-danger">Delete</a></td>
+            <td><a href="{{url('edit',$siswa->id)}}"class="btn btn-warning">Edit</a>
+            <a href="{{url('delete',$siswa->id)}}"class="btn btn-danger">Delete</a></td>
         </tr>
         @endforeach
     </tbody>

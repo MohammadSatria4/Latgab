@@ -15,5 +15,8 @@ use App\Http\Controllers\Pertemuan3Controller;
 */
 
 Route::get('/', [Pertemuan3Controller::class,'index']);
+Route::post('/', [Pertemuan3Controller::class,'store']);
 Route::get('/tambah', [Pertemuan3Controller::class,'create']);
-Route::get('/edit', [Pertemuan3Controller::class,'edit']);
+Route::get('/edit/{id}', [Pertemuan3Controller::class,'edit']);
+Route::post('/edit/{id}', [Pertemuan3Controller::class,'update']);
+Route::get('/delete/{id}', [Pertemuan3Controller::class, 'destroy']);
